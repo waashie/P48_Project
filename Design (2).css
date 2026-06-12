@@ -1,0 +1,456 @@
+h1 {
+    color: rgb(26, 26, 174);
+    font-size: 48px;
+}
+
+hr {
+    border: 1.8px solid black;
+    margin: 0 0 40px 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.social {
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+}
+
+.social-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: fit-content;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.social-content a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+}
+
+.social-content a:hover {
+    transition: 0.3s;
+    background-color: #43d1bf;
+    color: white;
+}
+
+.social:hover .social-content {
+    display: block;
+}
+
+.social:hover .btn-icon {
+    animation: spin 1s linear infinite;
+}
+
+.dropbtn {
+    border: #f64fd6 solid 1.5px;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropbtn:hover {
+    background-color: #f64fd6;
+    color: white;
+}
+
+.btn-icon {
+    display: inline-block;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    z-index: 100;
+    padding-top: 60px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #f64fd6;
+    color: white;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 99;
+}
+
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+#page1 {
+    background: lightcyan;
+}
+
+.page1-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    min-height: 90vh;
+    width: 95%;
+    padding: 10px;
+}
+
+#header {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightcyan;
+    padding: 10px;
+}
+
+#grid-item1 {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    background-color: lightcyan;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+#footer {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightcyan;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    justify-content: center;
+}
+
+.button {
+    border: none;
+    padding: 16px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 16px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.button1 {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 2px solid #f64fd6;
+}
+
+.button1:hover { background-color: #f64fd6; color: white; }
+
+.button1::after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.2s, margin-left 0.3s;
+    margin-left: 0px;
+}
+
+.button1:hover::after { content: ' '; opacity: 1; margin-left: 6px; }
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #f64fd6;
+}
+
+.button2:hover { background-color: #f64fd6; color: white; }
+
+.button2::after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s, margin-left 0.3s;
+    margin-left: 0px;
+}
+
+.button2:hover::after { content: ' ⋙'; opacity: 1; margin-left: 6px; }
+
+.confirmed {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border: 2px solid #4CAF50 !important;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* the confirmation modal */
+.confirm-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-box {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.confirm-box button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2e77f9;
+    color: white;
+    cursor: pointer;
+}
+
+.confirm-box button:hover {
+    background: #1d5fd1;
+}
+/* =============================================
+   SPRINT 3 — RECEIPT TOP + SPLIT BUTTONS BOTTOM
+   ============================================= */
+
+#page1 {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 92px);
+    padding: 0;
+    background: #f5f5f5;
+    /* override the base .page centering */
+    justify-content: flex-start;
+    align-items: stretch;
+    font-size: 1rem;
+}
+
+/* ── RECEIPT PANEL (~65%) ── */
+.receipt-panel {
+    flex: 0 0 65%;
+    background: #ffffff;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px 12px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.receipt-divider {
+    width: 100%;
+    max-width: 500px;
+    height: 1px;
+    background: #e8e8e8;
+    margin: 6px 0;
+}
+
+.receipt-divider--dashed {
+    background: none;
+    border-top: 1.5px dashed #d0d0d0;
+}
+
+.receipt-body {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 2px 0;
+}
+
+.receipt-key {
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 11px;
+}
+
+.receipt-val {
+    color: #111;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: right;
+}
+
+.receipt-row--total .receipt-val { font-size: 13px; }
+
+.receipt-row--highlight .receipt-key { color: #2e77f9; }
+.receipt-row--highlight .receipt-val { color: #f64fd6; font-size: 15px; }
+
+/* ── SPLIT HERO (~35%) ── */
+.split-hero {
+    flex: 0 0 35%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.split-panel {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    overflow: hidden;
+}
+
+/* LEFT: diagonal clip so right edge slants */
+.split-left {
+    background: #ffffff;
+    z-index: 2;
+    clip-path: polygon(0 0, calc(100% + 80px) 0, calc(100% - 80px) 100%, 0 100%);
+}
+
+.split-left:hover  { background: #111111; }
+
+/* RIGHT: plain, sits behind the clip */
+.split-right {
+    background: #ffffff;
+    z-index: 1;
+}
+
+.split-right:hover { background: #111111; }
+
+/* Labels */
+.split-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.split-left  .split-content { transform: translateX(-20px); }
+.split-right .split-content { transform: translateX(20px);  }
+
+.split-label {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #111111;
+    line-height: 1.05;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.split-left:hover  .split-label,
+.split-right:hover .split-label { color: #ffffff; }
+
+/* Glowing diagonal divider line */
+.split-divider {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #f64fd6, #2e77f9);
+    transform: skewX(-6deg);
+    z-index: 5;
+    pointer-events: none;
+    box-shadow: 0 0 16px rgba(246,79,214,0.55);
+}
+
+/* Invisible full-area button overlay for left panel */
+.split-btn-invisible {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Confirmed state */
+.split-left.confirmed-state              { background: #f64fd6 !important; }
+.split-left.confirmed-state .split-label { color: #fff !important; }
